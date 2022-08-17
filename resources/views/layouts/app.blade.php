@@ -13,17 +13,24 @@
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
     @livewireStyles
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.js" defer></script>
 </head>
 
-<body>
-    <div class="font-sans text-gray-900 antialiased">
-        {{ $slot }}
+<body class="font-sans antialiased bg-gray-100">
+    <div class="container mx-auto h-200">
+
+        <!-- Page Content -->
+        <main>
+            {{ $slot }}
+        </main>
     </div>
+
+    @stack('modals')
+
     @livewireScripts
 </body>
 
